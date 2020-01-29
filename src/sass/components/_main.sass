@@ -13,7 +13,9 @@ button
 #wallFrame
   display: flex
   flex-wrap: wrap
-  width: 100%
+  max-width: 76%
+  margin: 0 auto
+
 
 #controller
   background: lighten(#000, 20%)
@@ -55,3 +57,7 @@ iframe
   .frame_btn
     &:nth-child(1)
       margin-left: 0
+
+@media screen and ( max-width: 1474px )
+  #wallFrame
+    max-width: 100%
