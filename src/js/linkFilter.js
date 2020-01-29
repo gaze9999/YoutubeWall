@@ -31,7 +31,6 @@ submitLink.on('mouseup', function() {
     `<div class="wrapper" data-id="${cid}">
       <div class="btnGroup">
         <button class="linkRemove frame_btn">刪除</button>
-        <button class="linkLoop frame_btn">循環播放</button>
       </div>
       <iframe type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>
     </div>`
