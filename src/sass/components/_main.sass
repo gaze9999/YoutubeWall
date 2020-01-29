@@ -13,7 +13,7 @@ button
 #wallFrame
   display: flex
   flex-wrap: wrap
-  max-width: 76%
+  max-width: 80%
   margin: 0 auto
 
 
@@ -50,7 +50,7 @@ iframe
   flex-flow: row wrap
   justify-content: space-evenly
   align-items: center
-  flex-grow: 1
+  flex: 1 1 $playerWidth
   padding: .5rem 1rem
   .btnGroup
     flex-basis: 100%
@@ -58,6 +58,8 @@ iframe
     &:nth-child(1)
       margin-left: 0
 
-@media screen and ( max-width: 1184px )
+@media screen and ( max-width: 1366px )
   #wallFrame
-    max-width: 100%
+    max-width: 100%    
+  .wrapper
+    flex-basis: $playerWidth * 0.75
