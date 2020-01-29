@@ -28,21 +28,23 @@ submitLink.on('mouseup', function() {
   let linkEmbed = `https://www.youtube.com/embed/${getLink}?autoplay=1`
 
   wall.append(
-    `<div class="wrapper" data-id="${cid}">      
-      <button class="linkRemove frame_btn">刪除</button>
-      <button class="linkLoop frame_btn">循環播放</button>
-      <iframe type="text/html" src="${linkEmbed}"></iframe>
+    `<div class="wrapper" data-id="${cid}">
+      <div class="btnGroup">
+        <button class="linkRemove frame_btn">刪除</button>
+        <button class="linkLoop frame_btn">循環播放</button>
+      </div>
+      <iframe type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>
     </div>`
   )
   link.val('')
   Cookies.set(`link_${cid}`, getLink, { expires: 365, path: '' })
+  changeHeight()
   cid += 1
   Cookies.set('cid', cid, { expires: 365, path: '' })
-  changeHeight()
 })
 
 wall.on('mouseup', '.linkRemove', function() {
-  let thisObj = $(this).parent('div'),
+  let thisObj = $(this).parents('.wrapper'),
       thiscId = thisObj.data('id')
   Cookies.remove(`link_${thiscId}`, { path: '' })
   getCount = thisObj.remove()
@@ -59,12 +61,13 @@ clearLink.on('mouseup', function() {
   linkPlayer.remove()
 })
 
-wall.on('change', function() {
-  changeHeight()
-})
+// wall.on('change', function() {
+//   changeHeight()
+// })
 
 function changeHeight() {
   let playerFrame = $('.wrapper').find('iframe'),
       height = playerFrame.width() * 0.5625
   playerFrame.css('height', height + 'px')
+  // playerFrame.eq(-1).css('height', '405px')
 }
