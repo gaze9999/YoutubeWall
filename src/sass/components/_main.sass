@@ -1,6 +1,14 @@
 // main page
-body
-  min-height: 100vh
+button  
+  padding: .5rem 1rem
+  margin: .25rem 0
+  border-radius: 4px
+  border: none
+  cursor: pointer
+  transition: .4s
+  &:hover
+    background: #666
+    color: #fff
 
 #wallFrame
   display: flex
@@ -10,14 +18,21 @@ body
 iframe
   border: none
   background: #ccc
+  flex-basis: 100%
   max-width: $playerWidth
-  max-height: $playerWidth * 0.5625
-  width: $playerWidth
-  height: $playerWidth * 0.5625
+  // max-height: $playerWidth * 0.5625
+  // width: $playerWidth
+  // height: $playerWidth * 0.5625
 
 .wrapper
   display: flex
-  flex-flow: column wrap
+  flex-flow: row wrap
+  padding: .5rem 1rem
+  flex-grow: 1
+  .frame_btn
+    flex-basis: 20%
+    &:nth-child(even)
+      margin: .25rem .5rem
 
 .linkRemove
   // flex-basis: 100%
