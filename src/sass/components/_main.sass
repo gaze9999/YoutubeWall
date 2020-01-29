@@ -1,2 +1,23 @@
+// main page
 body
   min-height: 100vh
+
+#wallFrame
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+
+iframe
+  border: none
+  background: #ccc
+  max-width: $playerWidth
+  max-height: $playerWidth * 0.5625
+  width: $playerWidth
+  height: $playerWidth * 0.5625
+
+.wrapper
+  display: flex
+  flex-flow: column wrap
+
+.linkRemove
+  // flex-basis: 100%
