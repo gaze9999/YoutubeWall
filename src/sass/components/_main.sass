@@ -1,7 +1,7 @@
 // main page
 button  
-  padding: .5rem 1rem
-  margin: .25rem 0
+  @extend %minPadding
+  margin: .5rem .25rem
   border-radius: 4px
   border: none
   cursor: pointer
@@ -14,6 +14,24 @@ button
   display: flex
   flex-wrap: wrap
   width: 100%
+
+#controller
+  background: lighten(#000, 20%)
+  display: flex
+  align-items: center
+  position: sticky
+  padding: .5rem 2rem
+  top: 0
+  left: 0
+  right: 0
+  h1
+    color: #fff
+    letter-spacing: .25rem
+    font-weight: 500
+  .linkInput
+    @extend %minPadding
+    width: 30rem
+    margin: 0 1rem
 
 iframe
   border: none
@@ -29,10 +47,9 @@ iframe
   flex-flow: row wrap
   padding: .5rem 1rem
   flex-grow: 1
+  min-width: 40%
+  .btnGroup
+    flex-basis: 100%
   .frame_btn
-    flex-basis: 20%
-    &:nth-child(even)
-      margin: .25rem .5rem
-
-.linkRemove
-  // flex-basis: 100%
+    &:nth-child(1)
+      margin-left: 0
