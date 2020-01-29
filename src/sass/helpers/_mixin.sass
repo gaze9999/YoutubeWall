@@ -1,0 +1,60 @@
+// helpers/_mixin.sass
+
+=flexColumn($justify:space-around, $align:center)
+  display: flex
+  flex-flow: column wrap
+  justify-content: $justify
+  align-items: $align
+  @content
+
+=contentSpaceAround
+  justify-content: space-around
+  &::before, &::after
+    content: ''
+  @content
+
+=noPaddingMargin
+  margin: 0
+  padding: 0
+  @content
+
+=setMiddle
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  @content
+
+=stickyTop($pos: false)
+  position: sticky !important
+  left: 0
+  right: 0
+  @if $pos
+    top: $pos
+  @else
+    top: 0
+
+=stickyBottom($pos: false)
+  position: sticky !important
+  left: 0
+  right: 0
+  @if $pos
+    bottom: $pos
+  @else
+    bottom: 0
+
+=headerBackground
+  content: ''
+  position: absolute
+  display: block
+  top: 50%
+  left: 50%
+  transform: translate(-25%, -25%)
+  background: $mainBtnColor
+  width: 25%
+  height: 50%
+  z-index: -1
+
+=pWhitespace
+  content: ''
+  display: inline-block
+  width: 2rem
