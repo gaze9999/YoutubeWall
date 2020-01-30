@@ -53,7 +53,7 @@ wall.on('mouseup', '.linkRemove', function() {
 
 clearLink.on('mouseup', function() {
   let cookies = Cookies.get()
-  for (i in cookies) {
+  for (let i in cookies) {
     Cookies.remove(i, { path: '' })
   }
   Cookies.remove('cid', { path: '' })
@@ -63,7 +63,11 @@ clearLink.on('mouseup', function() {
 
 removeBtn.on('mouseup', function() {
   let rmvBtn = $('.wrapper').find('.btnGroup')
-  rmvBtn.toggleClass('hide')
+  $(this).hasClass('hide') ?
+  $(this).removeClass('hide') &
+  rmvBtn.removeClass('hide') :
+  $(this).addClass('hide') &
+  rmvBtn.addClass('hide')
 })
 
 // wall.on('change', function() {
