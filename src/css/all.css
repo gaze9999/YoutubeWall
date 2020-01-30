@@ -1,9 +1,9 @@
-a, a:visited, a:active, a:hover, a:link, p, body {
+a, a:visited, a:active, a:hover, a:link, p, body, #controller h1 {
   margin: 0;
   padding: 0;
 }
 
-button, #controller .linkInput {
+button, #controller .linkInput, .wrapper .btnGroup {
   padding: .5rem 1rem;
 }
 
@@ -15,7 +15,7 @@ body {
   background: #333333;
   position: relative;
   min-height: 100vh;
-  overflow-x: none;
+  overflow-x: hidden;
 }
 
 body * {
@@ -133,9 +133,13 @@ button:hover {
   position: -webkit-sticky;
   position: sticky;
   padding: .5rem 2rem;
+  height: 3rem;
   top: 0;
   left: 0;
   right: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
+  z-index: 1070;
 }
 
 #controller h1 {
@@ -149,6 +153,10 @@ button:hover {
   margin: 0 1rem;
 }
 
+#controller.hide {
+  top: -4rem;
+}
+
 iframe {
   border: none;
   background: #ccc;
@@ -160,6 +168,7 @@ iframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
@@ -174,15 +183,31 @@ iframe {
       -ms-flex: 1 1 720px;
           flex: 1 1 720px;
   padding: .5rem 1rem;
+  overflow: hidden;
 }
 
 .wrapper .btnGroup {
+  position: absolute;
+  background: #4d4d4d;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  top: 0;
+  left: 2rem;
+  z-index: 1060;
+}
+
+.wrapper .btnGroup.hide {
+  top: -100px;
 }
 
 .wrapper .frame_btn:nth-child(1) {
-  margin-left: 0;
+  margin-left: 1rem;
+}
+
+.wrapper .frame_btn:nth-last-child(1) {
+  margin-right: 1rem;
 }
 
 @media screen and (max-width: 1366px) {

@@ -6,6 +6,7 @@ let link = $('.linkInput'),
     submitLink = $('.linkSubmit'),
     removeLink = $('.linkRemove'),
     clearLink = $('.linkClear'),
+    removeBtn = $('.linkRemoveBtn'),
     wall = $('#wallFrame'),
     linkPlayer = $('.wrapper'),
     cid = 0
@@ -29,7 +30,7 @@ submitLink.on('mouseup', function() {
 
   wall.append(
     `<div class="wrapper" data-id="${cid}">
-      <div class="btnGroup">
+      <div class="btnGroup hide">
         <button class="linkRemove frame_btn">刪除</button>
       </div>
       <iframe type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>
@@ -50,14 +51,19 @@ wall.on('mouseup', '.linkRemove', function() {
   changeHeight()
 })
 
-clearLink.on('mouseup', function() {  
+clearLink.on('mouseup', function() {
   let cookies = Cookies.get()
   for (i in cookies) {
     Cookies.remove(i, { path: '' })
-  }  
+  }
   Cookies.remove('cid', { path: '' })
   linkPlayer = $('.wrapper')
   linkPlayer.remove()
+})
+
+removeBtn.on('mouseup', function() {
+  let rmvBtn = $('.wrapper').find('.btnGroup')
+  rmvBtn.toggleClass('hide')
 })
 
 // wall.on('change', function() {

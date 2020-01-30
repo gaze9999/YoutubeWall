@@ -6,7 +6,7 @@ $(document).ready(function() {
           cookieId = i.slice(5)
       wall.append(
         `<div class="wrapper" data-id="${cookieId}">
-          <div class="btnGroup">
+          <div class="btnGroup hide">
             <button class="linkRemove frame_btn">刪除</button>
           </div>
           <iframe type="text/html" src="${linkEmbed}"></iframe>

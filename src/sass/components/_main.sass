@@ -1,5 +1,5 @@
 // main page
-button  
+button
   @extend %minPadding
   margin: .5rem .25rem
   border-radius: 4px
@@ -23,10 +23,14 @@ button
   align-items: center
   position: sticky
   padding: .5rem 2rem
+  height: 3rem
   top: 0
   left: 0
   right: 0
+  transition: .4s
+  z-index: $zindex-tooltip
   h1
+    @extend %noPaddingMargin
     color: #fff
     letter-spacing: .25rem
     font-weight: 500
@@ -34,6 +38,8 @@ button
     @extend %minPadding
     width: 30rem
     margin: 0 1rem
+  &.hide
+    top: -4rem
 
 iframe
   border: none
@@ -47,19 +53,32 @@ iframe
 
 .wrapper
   display: flex
+  position: relative
   flex-flow: row wrap
   justify-content: space-evenly
   align-items: center
   flex: 1 1 $playerWidth
   padding: .5rem 1rem
+  overflow: hidden
   .btnGroup
+    @extend %minPadding
+    position: absolute
+    background: lighten(#000, 30%)
     flex-basis: 100%
+    transition: .4s
+    top: 0
+    left: 2rem
+    z-index: $zindex-popover
+    &.hide
+      top: -100px
   .frame_btn
     &:nth-child(1)
-      margin-left: 0
+      margin-left: 1rem
+    &:nth-last-child(1)
+      margin-right: 1rem
 
 @media screen and ( max-width: 1366px )
   #wallFrame
-    max-width: 100%    
+    max-width: 100%
   .wrapper
     flex-basis: $playerWidth * 0.75
