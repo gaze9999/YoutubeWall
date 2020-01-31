@@ -98,6 +98,22 @@ ul, ol, dl {
      object-fit: contain;
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 button {
   margin: .5rem .25rem;
   border-radius: 4px;
@@ -112,16 +128,6 @@ button:hover {
   color: #fff;
 }
 
-#wallFrame {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  max-width: 80%;
-  margin: 0 auto;
-}
-
 #controller {
   background: #333333;
   display: -webkit-box;
@@ -130,13 +136,13 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   padding: .5rem 2rem;
   height: 3rem;
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   -webkit-transition: .4s;
   transition: .4s;
   z-index: 1070;
@@ -157,9 +163,21 @@ button:hover {
   top: -4rem;
 }
 
+#wallFrame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
 iframe {
   border: none;
   background: #ccc;
+  height: 100%;
+  min-height: 405px;
 }
 
 iframe.linkPlayer {
@@ -177,21 +195,12 @@ iframe.linkChat {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 720px;
           flex: 1 1 720px;
   padding: .5rem 1rem;
   overflow: hidden;
+  width: 100%;
 }
 
 .wrapper .btnGroup {

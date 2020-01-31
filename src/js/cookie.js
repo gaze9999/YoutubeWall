@@ -10,8 +10,8 @@ $(document).ready(function() {
           <div class="btnGroup hide">
             <button class="linkRemove frame_btn">刪除</button>
           </div>
-          <iframe class="linkPlayer" type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>          
-          <iframe class="linkChat" type="text/html" src="${chatEmbed}" style="height: 405px;"></iframe>
+          <iframe class="linkPlayer" type="text/html" src="${linkEmbed}"></iframe>          
+          <iframe class="linkChat" type="text/html" src="${chatEmbed}"></iframe>
         </div>`
       )
     }
