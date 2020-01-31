@@ -26,16 +26,19 @@ submitLink.on('mouseup', function() {
     getLink = getLink.slice(0, 11)
   )
 
-  let linkEmbed = `https://www.youtube.com/embed/${getLink}?autoplay=1`
+  let linkEmbed = `https://www.youtube.com/embed/${getLink}?autoplay=1`,
+      chatEmbed = `https://www.youtube.com/live_chat?v=${getLink}&embed_domain=gaze9999.github.io`
 
   wall.append(
     `<div class="wrapper" data-id="${cid}">
       <div class="btnGroup hide">
         <button class="linkRemove frame_btn">刪除</button>
       </div>
-      <iframe type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>
+      <iframe class="linkPlayer" type="text/html" src="${linkEmbed}" style="height: 405px;"></iframe>
+      <iframe class="linkChat" type="text/html" src="${chatEmbed}" style="height: 405px;"></iframe>
     </div>`
   )
+  // if ()
   link.val('')
   Cookies.set(`link_${cid}`, getLink, { expires: 365, path: '' })
   changeHeight()

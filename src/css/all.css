@@ -160,8 +160,16 @@ button:hover {
 iframe {
   border: none;
   background: #ccc;
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+}
+
+iframe.linkPlayer {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+}
+
+iframe.linkChat {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
 }
 
 .wrapper {
